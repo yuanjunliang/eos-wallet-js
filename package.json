@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/yuanjunliang/eos-wallet-js.git"
   },
-  "author": "",
+  "author": "yuanjunliang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/yuanjunliang/eos-wallet-js/issues"
