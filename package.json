@@ -1,0 +1,27 @@
+{
+  "name": "eos-wallet-js",
+  "version": "1.0.0",
+  "description": "js wallet sdk for eos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuanjunliang/eos-wallet-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuanjunliang/eos-wallet-js/issues"
+  },
+  "homepage": "https://github.com/yuanjunliang/eos-wallet-js#readme",
+  "dependencies": {
+    "scatterjs-core": "^2.5.0",
+    "scatterjs-plugin-eosjs2": "^1.2.0",
+    "tp-eosjs": "^1.4.3"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.2.0"
+  }
+}
