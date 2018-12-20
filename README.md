@@ -22,5 +22,17 @@ import EOSWallet from 'eos-wallet-js'
 const Wallet = new EOSWallet(network)
 
 // connect to wallet
-Wallet.connect(())
+Wallet.connect((connected)=>{
+	console.log(connected)
+})
+
+// getIdentity
+Wallet.getIdentity((account)=>{
+	console.log(account)
+})
+
+// transfer
+Wallet.transfer(from,to,count,memo,(error,response)=>{
+	console.log(response)
+})
 ```
