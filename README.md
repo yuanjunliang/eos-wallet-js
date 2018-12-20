@@ -2,11 +2,11 @@
 
 Api
 
-- connect(callback)
-- getIdentity(callback)
-- forgetIdentity(callback)
-- transfer(from,to,count,memo,callback)
-
+- connect((connected)=>{})
+- getIdentity((error,account)=>{})
+- forgetIdentity()
+- getBalance(accountName,(error,response)=>{})
+- transfer(from,to,count,memo,(error,response)=>{})
 
 Useage
 
@@ -39,6 +39,9 @@ Wallet.connect((connected)=>{
 Wallet.getIdentity((error,account)=>{
 	console.log(error,account)
 })
+
+// forgetIdentity
+Wallet.forgetIdentity()
 
 // get balance
 Wallet.getBalance(accountName,(error,response)=>{
