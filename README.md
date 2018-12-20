@@ -40,6 +40,11 @@ Wallet.getIdentity((error,account)=>{
 	console.log(error,account)
 })
 
+// get balance
+Wallet.getBalance(accountName,(error,response)=>{
+    console.log(error,response)
+})
+
 // transfer
 Wallet.transfer(from,to,count,memo,(error,response)=>{
 	console.log(error,response)
