@@ -51,7 +51,7 @@ Wallet.getBalance(accountName,(error,response)=>{
 // get account
 Wallet.getAccount(accountName,(error,response)=>{})
 
-// transfer
+// transfer  memo should be number--  eg: 51--
 Wallet.transfer(from,to,count,memo,(error,response)=>{
 	console.log(error,response)
 })
