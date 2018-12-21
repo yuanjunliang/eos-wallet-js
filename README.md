@@ -48,6 +48,9 @@ Wallet.getBalance(accountName,(error,response)=>{
     console.log(error,response)
 })
 
+// get account
+Wallet.getAccount(accountName,(error,response)=>{})
+
 // transfer
 Wallet.transfer(from,to,count,memo,(error,response)=>{
 	console.log(error,response)
