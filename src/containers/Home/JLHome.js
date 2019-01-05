@@ -4,7 +4,7 @@ import {Button} from 'antd'
 import EOSWallet from 'eos-wallet-js'
 import HttpTool from '../../tools/HttpTool'
 
-const Http = new HttpTool({baseUrl:"https://api.eosbeijing.one"})
+const Http = new HttpTool({baseUrl:config.baseUrl})
 
 const Wallet = new EOSWallet(config.network,config.walletConfig)
 
@@ -58,13 +58,28 @@ export default class JLHome extends PureComponent{
         })        
     }
 
-    transfer(){
+    async transfer(){
+        let _this = this
+        let connected = await Wallet.connect()
+        if(!connected){
+            alert("connect to wallet failed")
+            return
+        }
+
+        let account = await Wallet.getIdentity()
+        if(!account.name){
+            alert("get identity failed")
+            return
+        }
+        this.setState({account})
+
         let params = {
-            from:this.state.account.name,
+            from:account.name,
             to:config.to,
             count:"1.0000",
             memo:"57--"
         }
+
         Wallet.transfer(params,(error,response)=>{
             console.log({error,response})
             alert(JSON.stringify({error,response}))

@@ -1,5 +1,5 @@
 export default {
-    baseUrl:"",
+    baseUrl:"https://api.eosbeijing.one",
     network:{
         blockchain:'eos',
         protocol:'https',
@@ -10,8 +10,7 @@ export default {
     walletConfig:{
         walletType:"scatter",   // required:false default:scatter values: scatter、tokenpacket、meetone   
         dappName:"dapp",        // required:true
-        initTimeout:5000,       // required:false default:5000 connect to scatter timeout
+        initTimeout:1000,       // required:false default:5000 connect to scatter timeout
     },
     to:"yuanjunliang"
 }
-
