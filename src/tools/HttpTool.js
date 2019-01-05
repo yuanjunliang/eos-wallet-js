@@ -15,13 +15,21 @@ export default class HttpTool{
         .catch(error=>error)
     }
 
-    get(url,params){
+    getJSON(url,params){
         url = this.baseUrl + url + this.getUrl(params)
         return fetch(url,{
             method:"GET",
             headers:{
                 'Content-Type': 'application/json',
             }
+        }).then(response=>response.json())
+        .catch(error=>error)
+    }
+
+    getFORM(url,params){
+        url = this.baseUrl + url + this.getUrl(params)
+        return fetch(url,{
+            method:"GET",
         }).then(response=>response.json())
         .catch(error=>error)
     }

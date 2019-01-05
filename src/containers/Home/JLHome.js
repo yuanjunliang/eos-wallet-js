@@ -2,6 +2,9 @@ import React,{PureComponent} from 'react'
 import config from '../../config/config'
 import {Button} from 'antd'
 import EOSWallet from 'eos-wallet-js'
+import HttpTool from '../../tools/HttpTool'
+
+const Http = new HttpTool({baseUrl:"https://api.eosbeijing.one"})
 
 const Wallet = new EOSWallet(config.network,config.walletConfig)
 
@@ -12,6 +15,17 @@ export default class JLHome extends PureComponent{
         this.state = {
             account:null
         }
+    }
+
+    getChainID(){
+        Http.getFORM("/v1/chain/get_info")
+            .then(response=>{
+                console.log({response})
+                alert(JSON.stringify(response))
+            })
+            .catch(error=>{
+                console.log({error})
+            })
     }
 
     connect(){
@@ -67,6 +81,7 @@ export default class JLHome extends PureComponent{
     render(){
         return(
             <div>
+                <div style={styles.buttonStyle}><Button type="primary" onClick={()=>{this.getChainID()}}>getChainID</Button></div>
                 <div style={styles.buttonStyle}><Button type="primary" onClick={()=>{this.connect()}}>connect</Button></div>
                 <div style={styles.buttonStyle}><Button type="primary" onClick={()=>{this.getIdentity()}}>getIdentity</Button></div>
                 <div style={styles.buttonStyle}><Button type="primary" onClick={()=>{this.forgetIdentity()}}>forgetIdentity</Button></div>
