@@ -65,9 +65,7 @@ export default class JLHome extends PureComponent{
         let _this = this
         
         if(!this.state.connected){
-            // alert("connect to wallet failed")
             await Wallet.connect()
-            // return
         }
 
         let account = await Wallet.getIdentity()
