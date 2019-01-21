@@ -2899,9 +2899,9 @@ entities@~1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
 
-eos-wallet-js@^1.0.18:
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/eos-wallet-js/-/eos-wallet-js-1.0.18.tgz#de2687047eb46d54bba6058e77ff340fc41769da"
+eos-wallet-js@^1.0.21:
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/eos-wallet-js/-/eos-wallet-js-1.0.21.tgz#0caffaf73a0841e9a4e65502a3b55c9502dbe485"
   dependencies:
     eosjs "^16.0.9"
     meet-bridge "^2.0.2-release"

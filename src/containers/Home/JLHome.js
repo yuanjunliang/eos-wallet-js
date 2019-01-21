@@ -13,7 +13,8 @@ export default class JLHome extends PureComponent{
         super(props)
 
         this.state = {
-            account:null
+            account:null,
+            connected:false
         }
     }
 
@@ -29,9 +30,11 @@ export default class JLHome extends PureComponent{
     }
 
     connect(){
+        let _this = this
         Wallet.connect((connected)=>{
             console.log("connected",connected)
             alert(JSON.stringify({connected}))
+            _this.setState({connected})
         })
     }
 
@@ -60,10 +63,11 @@ export default class JLHome extends PureComponent{
 
     async transfer(){
         let _this = this
-        let connected = await Wallet.connect()
-        if(!connected){
-            alert("connect to wallet failed")
-            return
+        
+        if(!this.state.connected){
+            // alert("connect to wallet failed")
+            await Wallet.connect()
+            // return
         }
 
         let account = await Wallet.getIdentity()
@@ -75,9 +79,9 @@ export default class JLHome extends PureComponent{
 
         let params = {
             from:account.name,
-            to:config.to,
+            to:config.walletConfig.to,
             count:"1.0000",
-            memo:"57--"
+            memo:"test eos-wallet-js"
         }
 
         Wallet.transfer(params,(error,response)=>{

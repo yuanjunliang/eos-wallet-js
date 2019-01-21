@@ -9,8 +9,8 @@ export default {
     },
     walletConfig:{
         walletType:"scatter",   // required:false default:scatter values: scatter、tokenpacket、meetone   
-        dappName:"dapp",        // required:true
+        dappName:"mydapp",        // required:true
         initTimeout:1000,       // required:false default:5000 connect to scatter timeout
-    },
-    to:"yuanjunliang"
+        to:"yuanjunliang"
+    }
 }
