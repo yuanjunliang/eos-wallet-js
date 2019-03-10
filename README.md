@@ -76,6 +76,10 @@ import EOSWallet from 'eos-wallet-js'
 const Wallet = EOSWallet(network,config)
 ```
 
+**注:**
+
+**以下所有接口都支持Promise和async/await的方式调用**
+
 - 通用接口
 
 ```
@@ -91,9 +95,12 @@ Wallet.getIdentity((error,account)=>{
 Wallet.forgetIdentity()
 
 // get balance
-Wallet.getBalance(accountName,(error,response)=>{
-    console.log(error,response)
-})
+let params = {
+    accountName:"",
+    code:"",    // default "eosio.token"
+    symbol:""   // default "EOS"
+}
+Wallet.getBalance(params,(error,response)=>{})
 
 // get account
 Wallet.getAccount(accountName,(error,response)=>{})
@@ -109,4 +116,36 @@ let params = {
 Wallet.transfer(params,(error,response)=>{
 	console.log(error,response)
 })
+
+// pushTransaction : call contract method
+// 该方法用于调用一些智能合约接口
+let action = {
+    actions: [{
+      account: 'eosio.token',
+      name: 'transfer',
+      authorization: [{
+        actor: 'useraaaaaaaa',
+        permission: 'active',
+      }],
+      data: {
+        from: 'useraaaaaaaa',
+        to: 'useraaaaaaab',
+        quantity: '0.0001 SYS',
+        memo: '',
+      },
+    }]
+}
+
+let blocksBehind = {
+    blocksBehind: 3,
+    expireSeconds: 30,
+}
+
+let params = [action,blocksBehind]
+Wallet.pushTransaction(params,(error,response)=>{})
+
+// 其他eosjs api方法
+Wallet.eos
 ```
+
+eosjs api 接口调用方法请参考:https://eosio.github.io/eosjs/
