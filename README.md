@@ -36,14 +36,6 @@ npm start
 
 ## API接口
 
-Api
-
-- connect((connected)=>{})
-- getIdentity((error,account)=>{})
-- forgetIdentity()
-- getBalance(accountName,(error,response)=>{})
-- transfer(params,(error,response)=>{})
-
 ## 用法
 
 - 安装钱包
@@ -80,31 +72,51 @@ const Wallet = EOSWallet(network,config)
 
 **以下所有接口都支持Promise和async/await的方式调用**
 
-- 通用接口
+- connect
 
 ```
 // connect to wallet
 Wallet.connect((connected)=>{})
+```
 
-// getIdentity
+- getIdentity
+
+```
+// get account identity
 Wallet.getIdentity((error,account)=>{
 	console.log(error,account)
 })
+```
 
-// forgetIdentity
+- forgetIdentity
+
+```
+// forget account identity
 Wallet.forgetIdentity()
+```
 
-// get balance
+- getBalance
+
+```
+// get account current balance
 let params = {
     accountName:"",
     code:"",    // default "eosio.token"
     symbol:""   // default "EOS"
 }
 Wallet.getBalance(params,(error,response)=>{})
+```
 
-// get account
+- getAccount
+
+```
+// get account info
 Wallet.getAccount(accountName,(error,response)=>{})
+```
 
+- transfer
+
+```
 // transfer
 let params = {
     from: string,
@@ -116,7 +128,11 @@ let params = {
 Wallet.transfer(params,(error,response)=>{
 	console.log(error,response)
 })
+```
 
+- pushTransaction
+
+```
 // pushTransaction : call contract method
 // 该方法用于调用一些智能合约接口
 let action = {
@@ -143,8 +159,12 @@ let blocksBehind = {
 
 let params = [action,blocksBehind]
 Wallet.pushTransaction(params,(error,response)=>{})
+```
 
-// 其他eosjs api方法
+- eosjs api
+
+```
+// 其他eosjs api方法,查看eos模块
 Wallet.eos
 ```
 
