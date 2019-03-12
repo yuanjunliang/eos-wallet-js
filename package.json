@@ -1,6 +1,6 @@
 {
   "name": "eos-wallet-js",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "js wallet sdk for eos",
   "main": "index.js",
   "scripts": {
