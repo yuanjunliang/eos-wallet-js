@@ -55,7 +55,7 @@ export default class JLHome extends PureComponent{
     }
 
     getBalance(){
-        Wallet.getBalance(this.state.account.name,(error,response)=>{
+        Wallet.getBalance({accountName:this.state.account.name},(error,response)=>{
             console.log(error,response)
             alert(JSON.stringify({error,response}))
         })        
