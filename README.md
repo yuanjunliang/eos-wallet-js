@@ -6,24 +6,11 @@
 
 `eos-wallet-js`是一个适配了多款钱包的`JS-SDK`,为了方便DApp开发者快速开发DApp并上线多款主流钱包，本项目采用统一的API接口。
 
-**目前已经对接的钱包应用包括: Scatter、TokenPacket、MeetOne、麦子钱包、比特派、EOSToken**
-
-未来我们希望能够将本项目做成一套通用的标准协议，正在与各大钱包厂商协商
-
-如果您的钱包项目愿意添加到本项目中，请联系我们:
-
-微信: 
-<div align="center">
-    <img src="https://github.com/yuanjunliang/eos-wallet-js/blob/master/doc/wechat.jpeg?raw=true" width="200px">
-</div>
-
-telegram: [https://t.me/eoswalletjs](https://t.me/eoswalletjs)
+**目前已经兼容的钱包应用包括: Scatter、TokenPacket、MeetOne、麦子钱包、比特派、EOSToken**
 
 ## 示例程序
 
-**注意**
-
-如果在chrome浏览器打开，请先配置好[Scatter钱包 chrome插件](https://chrome.google.com/webstore/detail/scatter/ammjpmhgckkpcamddpolhchgomcojkle)的主网信息为:`api.eosbeijing.one`节点的信息
+使用前请先安装[Scatter钱包](https://get-scatter.com/),并配置好节点和账号信息
 
 
 ```
