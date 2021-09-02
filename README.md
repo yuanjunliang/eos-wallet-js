@@ -57,7 +57,7 @@ const Wallet = EOSWallet(network,config)
 
 **注:**
 
-**以下所有接口都支持Promise和async/await的方式调用**
+**以下所有接口都支持Promise调用**
 
 - connect
 
